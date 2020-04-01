@@ -8,7 +8,7 @@ import pt from 'date-fns/locale/pt';
 import { Container, Time } from './styles';
 import api from './../../services/api';
 
-const range = [ 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20 ];
+const range = [ 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20 ];
 
 export default function Dashboard() {
     const [schedule, setSchedule] = useState([]);
@@ -19,7 +19,7 @@ export default function Dashboard() {
 
     useEffect(() => {
         async function loadSchedule() {
-            const response = await api.get('schedules', {
+            const response = await api.get('schedule', {
                 params: { date }
             });
 
@@ -73,21 +73,6 @@ export default function Dashboard() {
                         <span>{ time.appointment ? time.appointment.user.name : 'Em aberto' }</span>
                     </Time>
                 ))}
-
-                <Time available>
-                    <strong>09:00</strong>
-                    <span>Aberto</span>
-                </Time>
-
-                <Time>
-                    <strong>10:00</strong>
-                    <span>Bruno Matheus</span>
-                </Time>                
-
-                <Time>
-                    <strong>11:00</strong>
-                    <span>Bruno Matheus</span>
-                </Time>                
             </ul>
         </Container>
     );

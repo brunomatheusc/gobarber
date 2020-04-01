@@ -2,6 +2,7 @@ import styled from 'styled-components';
 
 export const Container = styled.div`
     width: 600px;
+    min-height: 100%;
     margin: 50px auto;
 
     display: flex;
@@ -26,7 +27,7 @@ export const Container = styled.div`
 
     ul {
         display: grid;
-        grid-template-columns: repeat(2, 1f);
+        grid-template-columns: repeat(2, 1fr);
         grid-gap: 15px;
         margin-top: 30px;
     }
